@@ -20,7 +20,7 @@ VOID Initialize()
 	::freopen_s(&pNewStdin, "CONIN$", "r", stdin);
 	::freopen_s(&pNewStdout, "CONOUT$", "w", stdout);
 	::freopen_s(&pNewStderr, "CONOUT$", "w", stderr);
-	g_hwnd = (HWND)FindWindowA("Age3DE", NULL);
+	g_hwnd = (HWND)FindWindowA("Age3DE", NULL); 
 
 	Core::Initialize();
 }

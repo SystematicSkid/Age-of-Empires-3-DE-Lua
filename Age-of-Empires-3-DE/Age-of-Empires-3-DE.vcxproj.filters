@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Header Files\Utility">
+      <UniqueIdentifier>{19eeb349-cc11-4b97-85da-8b7207ab5c29}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Core">
+      <UniqueIdentifier>{28996015-a679-4e79-a3b7-83b75ed9800b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Core\Hooks">
+      <UniqueIdentifier>{650c4d9a-2d63-4439-a97d-4013a08c94ad}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Engine">
+      <UniqueIdentifier>{53abab94-4e41-4fa4-85ed-92810e05f001}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Engine\Classes">
+      <UniqueIdentifier>{6e687553-536d-4be4-a297-f6b6f2c15333}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Engine\Classes\Unit">
+      <UniqueIdentifier>{bd3e3da7-ca5a-4fef-9a05-77feeda348f0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Core\Renderer">
+      <UniqueIdentifier>{569dd35a-c2b9-4317-a576-8365b222026e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Engine\Classes\Player">
+      <UniqueIdentifier>{08c2cb4d-66f7-429c-9738-5a0c0ae9d026}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Engine\Enums">
+      <UniqueIdentifier>{3562cde6-20f1-478d-adb9-bad01807305b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Core\Lua">
+      <UniqueIdentifier>{9d91ed71-1dc8-49e7-9a84-0fd1d9947017}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Utility\Memory.h">
+      <Filter>Header Files\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Core.h">
+      <Filter>Header Files\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Hooks\Hooks.h">
+      <Filter>Header Files\Core\Hooks</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Hooks\DirectX.h">
+      <Filter>Header Files\Core\Hooks</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Engine.h">
+      <Filter>Header Files\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Addresses.h">
+      <Filter>Header Files\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Classes\Game.h">
+      <Filter>Header Files\Engine\Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="Utility\Macros.h">
+      <Filter>Header Files\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Classes\World.h">
+      <Filter>Header Files\Engine\Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Classes\Unit\Unit.h">
+      <Filter>Header Files\Engine\Classes\Unit</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Classes\Unit\ProtoUnit.h">
+      <Filter>Header Files\Engine\Classes\Unit</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Classes\Renderer.h">
+      <Filter>Header Files\Engine\Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Classes\Player\Player.h">
+      <Filter>Header Files\Engine\Classes\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Classes\ResourceManager.h">
+      <Filter>Header Files\Engine\Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Enums\UnitType.h">
+      <Filter>Header Files\Engine\Enums</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Enums\Resource.h">
+      <Filter>Header Files\Engine\Enums</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Hooks\Game.h">
+      <Filter>Header Files\Core\Hooks</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Renderer\renderer.h">
+      <Filter>Header Files\Core\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Lua\Lua.h">
+      <Filter>Header Files\Core\Lua</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Lua\Binding.h">
+      <Filter>Header Files\Core\Lua</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

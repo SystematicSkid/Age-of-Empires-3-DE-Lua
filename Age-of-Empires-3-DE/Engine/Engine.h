@@ -34,6 +34,11 @@
 #include "./Classes/Unit/ProtoUnit.h"
 #include "./Classes/Unit/Unit.h"
 
+/* Engine -> Console */
+#include "./Classes/Console/Syscall.h"
+#include "./Classes/Console/SyscallModule.h"
+#include "./Classes/Console/Console.h"
+
 /* Classes */
 #include "./Classes/ResourceManager.h"
 #include "./Classes/World.h"

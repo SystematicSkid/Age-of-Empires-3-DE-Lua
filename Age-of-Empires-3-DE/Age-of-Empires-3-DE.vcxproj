@@ -152,6 +152,9 @@
     <ClInclude Include="Core\Lua\Lua.h" />
     <ClInclude Include="Core\Renderer\renderer.h" />
     <ClInclude Include="Engine\Addresses.h" />
+    <ClInclude Include="Engine\Classes\Console\Console.h" />
+    <ClInclude Include="Engine\Classes\Console\Syscall.h" />
+    <ClInclude Include="Engine\Classes\Console\SyscallModule.h" />
     <ClInclude Include="Engine\Classes\Player\Player.h" />
     <ClInclude Include="Engine\Classes\Renderer.h" />
     <ClInclude Include="Engine\Classes\ResourceManager.h" />

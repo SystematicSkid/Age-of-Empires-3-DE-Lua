@@ -123,6 +123,21 @@ namespace Core
 				);
 			}
 
+			static void Syscalls()
+			{
+				auto syscall_module = Engine::Console::Instance->SyscallModule;
+				if (!syscall_module)
+					return;
+				for (int i = 0; i < syscall_module->NumSyscalls; i++)
+				{
+					auto syscall = syscall_module->Syscalls[i];
+					if(!syscall)
+						continue;
+					auto fn = static_cast<PVOID(__fastcall*)(...)>(syscall->Callback);
+					lua[syscall->GetName().c_str()] = fn;
+				}
+			}
+
 			static void Enums()
 			{
 				/* Enums */
@@ -179,6 +194,7 @@ namespace Core
 					sol::lib::jit);
 
 				UserTypes();
+				Syscalls();
 				Enums();
 
 				printf("\t[ Lua ] Directory: %s\n", GetLuaDirectory().c_str());

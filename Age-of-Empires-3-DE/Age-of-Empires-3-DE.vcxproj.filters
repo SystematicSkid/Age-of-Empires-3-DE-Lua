@@ -43,6 +43,9 @@
     <Filter Include="Header Files\Core\Lua">
       <UniqueIdentifier>{9d91ed71-1dc8-49e7-9a84-0fd1d9947017}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Engine\Classes\Console">
+      <UniqueIdentifier>{f2c02dd4-da94-40d1-a83f-121f69a14d51}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -109,6 +112,15 @@
     </ClInclude>
     <ClInclude Include="Core\Lua\Binding.h">
       <Filter>Header Files\Core\Lua</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Classes\Console\Console.h">
+      <Filter>Header Files\Engine\Classes\Console</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Classes\Console\SyscallModule.h">
+      <Filter>Header Files\Engine\Classes\Console</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Classes\Console\Syscall.h">
+      <Filter>Header Files\Engine\Classes\Console</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

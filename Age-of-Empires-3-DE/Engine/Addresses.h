@@ -130,12 +130,37 @@ namespace Engine
 			}
 		}
 
-		namespace Syscalls
+		namespace Syscall
 		{
+			namespace Offsets
+			{
+				DWORD64 CONST Callback		= 0x0008;
+				DWORD64 CONST Description	= 0x0010;
+			}
+
 			namespace Functions
 			{
 				DWORD64 CONST SetupXsCallbacks = Memory::GetCallAddress("E8 ? ? ? ? B0 01 48 83 C4 28 C3 48 89 5C 24 ? 48 89 6C 24");
 			}
+		}
+
+		namespace SyscallModule
+		{
+			namespace Offsets
+			{
+				DWORD64 CONST Syscalls		= 0x0010;
+				DWORD64 CONST NumSyscalls	= 0x0008 + Syscalls;
+				DWORD64 CONST MaxSyscalls	= 0x0004 + NumSyscalls;
+			}
+		}
+
+		namespace Console
+		{
+			namespace Offsets
+			{
+				DWORD64 CONST SyscallModule = 0x0090;
+			}
+			DWORD64 CONST Instance = Memory::GetInstanceAddress("48 8B 0D ? ? ? ? 41 B9 ? ? ? ? E8 ? ? ? ? 8B 15 ? ? ? ? 4C 8D 05 ? ? ? ? 48 8B 0D ? ? ? ? 41 B9 ? ? ? ? E8 ? ? ? ? 48 8B CB");
 		}
 	}
 }

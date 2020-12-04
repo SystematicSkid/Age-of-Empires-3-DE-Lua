@@ -50,6 +50,11 @@ namespace Engine
 				DWORD64 CONST MaxPlayers = NumPlayers + 0x4;
 				DWORD64 CONST MapName = 0xB0;
 			}
+
+			namespace Functions
+			{
+				DWORD64 CONST OnUpdate = Memory::SigScan("48 89 5C 24 ? 57 48 83 EC 20 0F B6 B9");
+			}
 		}
 
 		namespace Unit
@@ -161,6 +166,14 @@ namespace Engine
 				DWORD64 CONST SyscallModule = 0x0090;
 			}
 			DWORD64 CONST Instance = Memory::GetInstanceAddress("48 8B 0D ? ? ? ? 41 B9 ? ? ? ? E8 ? ? ? ? 8B 15 ? ? ? ? 4C 8D 05 ? ? ? ? 48 8B 0D ? ? ? ? 41 B9 ? ? ? ? E8 ? ? ? ? 48 8B CB");
+		}
+
+		namespace XMLReader
+		{
+			namespace Functions
+			{
+				DWORD64 CONST LoadFile = Memory::GetCallAddress("E8 ? ? ? ? 84 C0 74 0A 4C 8B 6C 24");
+			}
 		}
 	}
 }

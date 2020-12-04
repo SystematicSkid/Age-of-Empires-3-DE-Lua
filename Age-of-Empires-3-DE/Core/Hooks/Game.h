@@ -75,6 +75,24 @@ namespace Core
 				return static_cast<BOOL(__fastcall*)(PVOID, PVOID, PVOID, PVOID)>(original_callback)(thisptr, a2, a3, a4);
 			}
 
+			PLH::VEHHook* loadfile_hook = nullptr;
+			BOOL __fastcall NewLoadFile(PVOID xml_reader, int directory_list, PCHAR filename, PVOID string_table, bool unk1)
+			{
+				loadfile_hook->GetProtectionObject();
+
+				Lua::Binding::HookCall("OnLoadFile", filename);
+				return static_cast<BOOL(__fastcall*)(PVOID, int, PCHAR, PVOID, bool)>(loadfile_hook->GetOriginal<PVOID>())(xml_reader, directory_list, filename, string_table, unk1);
+			}
+
+			PLH::VEHHook* worldupdate_hook = nullptr;
+			BOOL __fastcall NewWorldUpdate(Engine::World* world, PVOID, PVOID a2, PVOID a3)
+			{
+				worldupdate_hook->GetProtectionObject();
+
+				Lua::Binding::HookCall("OnUpdate", world);
+				return static_cast<BOOL(__fastcall*)(Engine::World*, PVOID, PVOID)>(worldupdate_hook->GetOriginal<PVOID>())(world, a2, a3);
+			}
+
 			BOOL Initialize()
 			{
 				/*heartbeat_hook = new PLH::VEHHook();
@@ -88,6 +106,16 @@ namespace Core
 				selectioncount_hook = new PLH::VEHHook();
 				selectioncount_hook->SetupHook((BYTE*)Engine::Addresses::Game::Functions::GetMaxSelectionCount, (BYTE*)&NewGetMaxSelectionCount, PLH::VEHHook::VEHMethod::INT3_BP);
 				if (!selectioncount_hook->Hook())
+					return FALSE;
+
+				loadfile_hook = new PLH::VEHHook();
+				loadfile_hook->SetupHook((BYTE*)Engine::Addresses::XMLReader::Functions::LoadFile, (BYTE*)&NewLoadFile, PLH::VEHHook::VEHMethod::INT3_BP);
+				if (!loadfile_hook->Hook())
+					return FALSE;
+
+				worldupdate_hook = new PLH::VEHHook();
+				worldupdate_hook->SetupHook((BYTE*)Engine::Addresses::World::Functions::OnUpdate, (BYTE*)&NewWorldUpdate, PLH::VEHHook::VEHMethod::INT3_BP);
+				if (!worldupdate_hook->Hook())
 					return FALSE;
 
 				/*callback_hook = new PLH::VEHHook();
